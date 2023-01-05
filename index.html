@@ -1,45 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
-  </head>
-  <body>
-    <!-- Your content goes here -->
-    <div id="header">
-      <h1>Etch-A-Sketch</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reset.css">
+  <title>SketchPad</title>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="title"><h1>SketchPad</h1></div>
+    <div class="content">
+      <div class="board"></div>
+      <div class="buttons">
+        <button>Black</button>
+        <button>White</button>
+        <button>Rainbow</button>
+        <button>reset</button>
+      </div>
+      <div>
+        <input type="text" placeholder="Size of Board" value="16">
+        <button>Set Size</button>
+      </div>
     </div>
-
-    <div id="grid size">
-      <p>New grid size:</p><input type="text" id="user-number" class="user-number">
-      <p id="copy-input"></p>
-      <button id="user-submit" class="user-submit">Submit</button>
-      <p id="input-prompt"></p>
-    </div>
-
-    <div id="buttons">
-      <form id="button-container">
-        <input type="radio" id="black-pen" name="pen" value="black-pen"> <label for="black-pen">Black</label>
-        <input type="radio" id="red-pen" name="pen" value="red-pen"> <label for="red-pen">Red</label>
-        <input type="radio" id="blue-pen" name="pen" value="blue-pen"> <label for="blue-pen">Blue</label>
-        <input type="radio" id="rainbow" name="pen" value="rainbow"> <label for="Rainbow">Rainbow</label>
-        <input type="radio" id="eraser" name="pen" value="eraser"> <label for="eraser">Eraser</label>
-      </form>
-      <button id="clear-button">Clear</button> 
-    </div>
-    
-    <div class="canvas">
-      <div class="container"></div>
-    </div>
-
-    <footer>
-      <p>2022 WAYD0S for <a href="https://www.theodinproject.com" target="_blank">The Odin Project</a></p>
-    </footer>
-
-  </body>
+  </div>
+  
+</body>
+<script src="main.js"></script>
 </html>
-
-<!-- TODO 1: add styles -->
-<!-- TODO 2: yes -->
