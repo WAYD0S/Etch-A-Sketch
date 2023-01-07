@@ -1,7 +1,8 @@
 let color = "black";
+let board = document.querySelector(".board");
+let isPointerDown = true;
 
 function populateBoard(size) {
-  let board = document.querySelector('.board');
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => div.remove());
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -30,18 +31,27 @@ function changeSize(input) {
 }
 
 function colorSquare() {
-  if (color === 'rainbow') {
-    let letters = '0123456789ABCDEF';
-    let rainbow = '#';
-    for (let i = 0; i < 6; i++) {
-      rainbow += letters[Math.floor(Math.random() * 16)];
-    }
-    this.style.backgroundColor = rainbow;
-  } else {
-    this.style.backgroundColor = color; 
-  }  
+  if(isPointerDown) {
+    if (color === 'rainbow') {
+      let letters = '0123456789ABCDEF';
+      let rainbow = '#';
+      for (let i = 0; i < 6; i++) {
+        rainbow += letters[Math.floor(Math.random() * 16)];
+      }
+      this.style.backgroundColor = rainbow;
+    } else {
+      this.style.backgroundColor = color; 
+    }  
+  }
 }
 
 function changeColor(choice) {
   color = choice;
 }
+
+function resetBoard() {
+    let board = document.querySelector("div");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.style.backgroundColor = "white");
+}
+
