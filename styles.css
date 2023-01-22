@@ -1,9 +1,49 @@
 body {
- background-color: maroon; 
+  text-align: center;
+}
+
+@keyframes rainbow-fade {
+  0% {
+      color: red;
+      opacity: 1;
+  }
+  16.6% {
+      color: orange;
+      opacity: 0.8;
+  }
+  33.3% {
+      color: yellow;
+      opacity: 0.6;
+  }
+  50% {
+      color: green;
+      opacity: 0.4;
+  }
+  66.6% {
+      color: blue;
+      opacity: 0.2;
+  }
+  83.3% {
+      color: indigo;
+      opacity: 0;
+  }
+  100% {
+      color: violet;
+      opacity: 1;
+  }
+}
+
+
+.title {
+  font-size: 50px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  animation: rainbow-fade 10s ease-in-out infinite;
+
 }
 
 .board{
   width: 500px;
   height: 500px;
   display: grid;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 let color = "black";
 let board = document.querySelector(".board");
-let isPointerDown = true;
+let isPointerDown = false;
 
 function populateBoard(size) {
   let squares = board.querySelectorAll("div");
@@ -30,19 +30,17 @@ function changeSize(input) {
 
 }
 
-function colorSquare() {
-  if(isPointerDown) {
-    if (color === 'rainbow') {
-      let letters = '0123456789ABCDEF';
-      let rainbow = '#';
-      for (let i = 0; i < 6; i++) {
-        rainbow += letters[Math.floor(Math.random() * 16)];
-      }
-      this.style.backgroundColor = rainbow;
-    } else {
-      this.style.backgroundColor = color; 
-    }  
-  }
+function colorSquare(event) {
+  if (color === 'rainbow') {
+    let letters = '0123456789ABCDEF';
+    let rainbow = '#';
+    for (let i = 0; i < 6; i++) {
+      rainbow += letters[Math.floor(Math.random() * 16)];
+    }
+    this.style.backgroundColor = rainbow;
+  } else {
+    this.style.backgroundColor = color; 
+  }  
 }
 
 function changeColor(choice) {
